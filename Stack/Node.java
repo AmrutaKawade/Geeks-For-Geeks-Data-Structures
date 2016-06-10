@@ -1,9 +1,8 @@
-package CircularLinkedList;
+package Stack;
 
 public class Node {
 	int data;
 	Node node;
-	
 	public Node(int data) {
 		super();
 		this.data = data;
@@ -19,5 +18,5 @@ public class Node {
 	}
 	public void setNode(Node node) {
 		this.node = node;
-	}	
+	}
 }

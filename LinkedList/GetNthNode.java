@@ -1,4 +1,4 @@
-package linkedList;
+package LinkedList;
 
 public class GetNthNode {
 	public static void main(String[] args) {

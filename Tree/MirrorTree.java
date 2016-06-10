@@ -1,4 +1,4 @@
-package tree;
+package Tree;
 
 //Algorithm: do postOrder Traversal then swap nodes
 public class MirrorTree {

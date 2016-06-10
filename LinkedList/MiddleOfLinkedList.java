@@ -1,4 +1,4 @@
-package linkedList;
+package LinkedList;
 
 public class MiddleOfLinkedList {
 	public static void main(String[] args) {

@@ -1,4 +1,4 @@
-package tree;
+package Tree;
 
 /*Given an arbitrary binary tree, convert it to a binary tree that holds Children Sum Property. 
  * You can only increment data values in any node (You cannot change structure of tree and 

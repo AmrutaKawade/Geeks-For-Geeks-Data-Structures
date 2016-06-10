@@ -1,10 +1,11 @@
-package circularLinkedList;
+package CircularLinkedList;
 
-import linkedList.Node;
+import LinkedList.Node;
 
 public class SplitCircuarLinkedList {
+	static Node head,head1,head2;
 	public static void main(String[] args) {
-		Node head = new Node(1);
+		head = new Node(1);
 		Node first = new Node(2);
 		Node second = new Node(3);
 		Node third = new Node(4);
@@ -15,19 +16,36 @@ public class SplitCircuarLinkedList {
 		second.setNode(third);
 		third.setNode(fourth);
 		fourth.setNode(head);
-		splitList(head);
+		
+		printList(head);
+		
+		splitList();
+		
+		printList(head1);
+		printList(head2);
 	}
-
-	private static void splitList(Node head) {
+	
+	private static void printList(Node node) {
+		Node start = node;
+		do{
+			System.out.println(node.getData()+"\t");
+			node = node.getNode();
+		}while(node != start);
+		System.out.println("\n");
+	}	
+	
+	private static void splitList() {
 		Node slowPtr = head;
 		Node fastPtr = head;
 		do{
 			slowPtr = slowPtr.getNode();
 			fastPtr = fastPtr.getNode().getNode();
 		}while(fastPtr.getNode() != head);
-		fastPtr.setNode(slowPtr.getNode());
-		slowPtr.setNode(head);
-		System.out.println("Slow:"+slowPtr.getData());
-		System.out.println("Fast:"+fastPtr.getData());
+		
+		head1 = head;
+		head2 = slowPtr.getNode();
+		
+		fastPtr.setNode(head2);
+		slowPtr.setNode(head1);
 	}
 }

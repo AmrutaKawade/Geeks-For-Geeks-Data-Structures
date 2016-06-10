@@ -1,4 +1,4 @@
-package geeksForGeeks;
+package Tree;
 //Size = Number of nodes in tree
 public class SizeOfTree {
 	public static void main(String[] args) {

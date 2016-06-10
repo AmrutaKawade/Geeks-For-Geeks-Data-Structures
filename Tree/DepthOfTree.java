@@ -1,4 +1,4 @@
-package geeksForGeeks;
+package Tree;
 
 
 public class DepthOfTree {

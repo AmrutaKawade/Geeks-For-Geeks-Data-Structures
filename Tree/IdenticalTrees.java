@@ -1,4 +1,4 @@
-package geeksForGeeks;
+package Tree;
 //Two trees are identical when they have same data and arrangement of data is also same.
 public class IdenticalTrees {
 	public static void main(String[] args) {

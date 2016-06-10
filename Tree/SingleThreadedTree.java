@@ -1,4 +1,4 @@
-package geeksForGeeks;
+package Tree;
 //Where a NULL right pointers is made to point to the inorder successor (if successor exists)
 public class SingleThreadedTree {
 	public static void main(String[] args) {

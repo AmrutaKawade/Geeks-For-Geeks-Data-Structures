@@ -1,8 +1,9 @@
-package linkedList;
+package LinkedList;
 
 public class LinkedListTraversal {
+	static Node head;
 	public static void main(String[] args) {
-		Node head = new Node(1);
+		head = new Node(1);
 		Node first = new Node(2);
 		Node third = new Node(3);
 		
@@ -13,7 +14,7 @@ public class LinkedListTraversal {
 		
 		//Add at first
 		int data = 7;
-		addElementAtFirst(head,data);
+		addElementAtFirst(data);
 		
 		//Add after given node
 		data = 4;
@@ -21,18 +22,18 @@ public class LinkedListTraversal {
 		
 		//Add at end
 		data = 5;
-		addElementAtEnd(head,data);
+		addElementAtEnd(data);
 		
 		printList(head);
 		
 		//Delete Node when data is given
-		deleteNode(head, 7);
+		deleteNode(5);
 		
 		//Delete Node when node to be deleted is given
-		deleteNode(head);
+		/*deleteNode(head);
 		
 		//Delete all linked list
-		deleteList(head);
+		deleteList(head);*/
 		printList(head);
 		
 	}
@@ -45,43 +46,43 @@ public class LinkedListTraversal {
 		System.out.println("\n");
 	}
 	//Complexity O(1)
-	private static void addElementAtFirst(Node head, int data){
-		Node node = new Node(head.getData());
-		node.setNode(head.getNode());
-		head.setData(data);
-		head.setNode(node);
+	private static void addElementAtFirst(int data){
+		Node node = new Node(data);
+		node.setNode(head);
+		head = node;
 	}
 	//Complexity O(1)
 	private static void addElementAfterNode(Node prevNode, int data){
 		Node node = new Node(data);
-		Node temp = prevNode.getNode();
+		node.setNode(prevNode.getNode());
 		prevNode.setNode(node);
-		node.setNode(temp);
 	}
 	//Complexity O(n) n=length of linked list
-	private static void addElementAtEnd(Node head, int data){
+	private static void addElementAtEnd(int data){
 		Node node = new Node(data);
-		while(head.getNode() != null){
-			head = head.getNode();
+		Node last = head;
+		while(last.getNode() != null){
+			last = last.getNode();
 		}
-		head.setNode(node);
+		last.setNode(node);
 	}
 	
-	private static void deleteNode(Node node, int key){
+	private static void deleteNode(int key){
 		Node prevNode = null;
+		Node node = head;
+		//If key is at the start
+		if(node != null && node.getData() == key){
+			head = head.getNode();
+		}
 		while(node != null && node.getData() != key){
 			prevNode = node;
 			node = node.getNode();
 		}
+		//If key is last element
 		if(node != null && prevNode != null){
 			prevNode.setNode(node.getNode());
-			node = null;
-		}else if(prevNode == null){
-			Node temp = node;
-			node.setData(node.getNode().getData());
-			node.setNode(node.getNode().getNode());
-			temp = null;
-		}else{
+		}
+		else{
 			System.out.println("key is not in list");
 		}
 	}

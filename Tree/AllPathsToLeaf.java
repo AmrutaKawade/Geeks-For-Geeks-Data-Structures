@@ -1,4 +1,4 @@
-package tree;
+package Tree;
 
 public class AllPathsToLeaf {
 	public static void main(String[] args) {

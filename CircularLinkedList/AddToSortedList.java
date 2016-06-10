@@ -1,6 +1,6 @@
-package circularLinkedList;
+package CircularLinkedList;
 
-import linkedList.Node;
+import LinkedList.Node;
 
 public class AddToSortedList {
 	public static void main(String[] args) {

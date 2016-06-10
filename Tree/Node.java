@@ -1,10 +1,11 @@
-package tree;
+package Tree;
 
 
 public class Node {
 	Node right;
 	Node left;
 	int data;
+	boolean rightThread;
 	
 	public Node(int data) {
 		super();
@@ -28,5 +29,10 @@ public class Node {
 	public void setData(int data) {
 		this.data = data;
 	}
-	
+	public boolean isRightThread() {
+		return rightThread;
+	}
+	public void setRightThread(boolean rightThread) {
+		this.rightThread = rightThread;
+	}
 }
